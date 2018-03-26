@@ -1,7 +1,7 @@
 # Личный проект «Пиксель хантер» [![Build status][travis-image]][travis-url]
 
 * Студент: [Stanislav Melekhov](https://up.htmlacademy.ru/ecmascript/4/user/109619).
-* Наставник: `Неизвестно`.
+* Наставник: [Александр Быков](https://up.htmlacademy.ru/ecmascript/4/user/7107).
 
 ---
 
