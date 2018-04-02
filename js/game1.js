@@ -63,14 +63,10 @@ const game1 = () => {
   `;
   const game1Screen = createDOM(template);
   const gameAnswers = game1Screen.querySelectorAll(`.game__answer`);
-  let answers = 0;
 
   gameAnswers.forEach((answer) => {
     answer.addEventListener(`click`, () => {
-      answers++;
-      if (answers === 4) {
-        showScreen(game2());
-      }
+      showScreen(game2());
     });
   });
 

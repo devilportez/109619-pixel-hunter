@@ -52,14 +52,10 @@ const game2 = () => {
   `;
   const game2Screen = createDOM(template);
   const gameAnswer = game2Screen.querySelectorAll(`.game__answer`);
-  let answers = 0;
 
   gameAnswer.forEach((answer) => {
     answer.addEventListener(`click`, () => {
-      answers++;
-      if (answers === 2) {
-        showScreen(game3());
-      }
+      showScreen(game3());
     });
   });
 
