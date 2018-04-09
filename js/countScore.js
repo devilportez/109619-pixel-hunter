@@ -8,15 +8,15 @@ const countScore = (answers, lives) => {
   if (answers.length < 10) {
     return -1;
   }
-  answers.map((answer) => {
-    if (answer.isCorrect && answer.time >= 10 && answer.time <= 20) {
+  answers.reduce((answer) => {
+    if (answer.isCorrect) {
       score += CORRECT_ANSWER;
-    }
-    if (answer.isCorrect && answer.time < 10) {
-      score += CORRECT_FAST_ANSWER;
-    }
-    if (answer.isCorrect && answer.time > 20) {
-      score -= CORRECT_SLOW_ANSWER;
+      if (answer.isCorrect && answer.time < 10) {
+        score += CORRECT_FAST_ANSWER;
+      }
+      if (answer.isCorrect && answer.time > 20) {
+        score -= CORRECT_SLOW_ANSWER;
+      }
     }
   });
   score += lives * LIVE_COST;
