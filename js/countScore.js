@@ -6,7 +6,7 @@ const countScore = (answers, lives) => {
     return -1;
   }
 
-  const answerScore = answers.reduce((score, answer) => {
+  const answersScore = answers.reduce((score, answer) => {
     if (answer.isCorrect) {
       if (answer.time <= 10) {
         return score + (CORRECT_ANSWER + EXTRA_SCORE);
@@ -24,7 +24,7 @@ const countScore = (answers, lives) => {
 
   const livesScore = lives * EXTRA_SCORE;
 
-  return answerScore + livesScore;
+  return answersScore + livesScore;
 };
 
 export default countScore;
