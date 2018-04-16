@@ -6,20 +6,21 @@ const countScore = (answers, lives) => {
     return -1;
   }
 
-  const answersScore = answers.reduce((score, answer) => {
+  const answersScore = answers.reduce((sum, answer) => {
+    let score = 0;
     if (answer.isCorrect) {
-      if (answer.time <= 10) {
-        return score + (CORRECT_ANSWER + EXTRA_SCORE);
+      if (answer.time > 0 && answer.time <= 10) {
+        score += (CORRECT_ANSWER + EXTRA_SCORE);
       }
-      if (answer.time <= 20) {
-        return score + CORRECT_ANSWER;
+      if (answer.time > 10 && answer.time <= 20) {
+        score += CORRECT_ANSWER;
       }
-      if (answer.time <= 30) {
-        return score + (CORRECT_ANSWER - EXTRA_SCORE);
+      if (answer.time > 20 && answer.time <= 30) {
+        score += (CORRECT_ANSWER - EXTRA_SCORE);
       }
     }
 
-    return score;
+    return sum + score;
   }, 0);
 
   const livesScore = lives * EXTRA_SCORE;
