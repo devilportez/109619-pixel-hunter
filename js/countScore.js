@@ -11,11 +11,9 @@ const countScore = (answers, lives) => {
     if (answer.isCorrect) {
       if (answer.time > 0 && answer.time <= 10) {
         score += (CORRECT_ANSWER + EXTRA_SCORE);
-      }
-      if (answer.time > 10 && answer.time <= 20) {
+      } else if (answer.time > 10 && answer.time <= 20) {
         score += CORRECT_ANSWER;
-      }
-      if (answer.time > 20 && answer.time <= 30) {
+      } else if (answer.time > 20 && answer.time <= 30) {
         score += (CORRECT_ANSWER - EXTRA_SCORE);
       }
     }
